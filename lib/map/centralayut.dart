@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+class Centralayut extends StatefulWidget {
+  const Centralayut({super.key});
+
+  @override
+  State<Centralayut> createState() => _CentralayutState();
+}
+
+class _CentralayutState extends State<Centralayut> {
+  late GoogleMapController mapController;
+  final LatLng _center = const LatLng(14.331694605283836, 100.61181628092581);
+  final Set<Marker> _markers = {};
+
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
+    setState(() {
+      _markers.add(
+        Marker(
+          markerId: MarkerId(_center.toString()),
+          position: _center,
+          infoWindow: InfoWindow(
+            title: 'เซ็นทรัล พระนครศรีอยุธยา',
+          ),
+          icon: BitmapDescriptor.defaultMarker,
+        ),
+      );
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('แสดงแผนที่'),
+      ),
+      body: GoogleMap(
+        onMapCreated: _onMapCreated,
+        initialCameraPosition: CameraPosition(
+          target: _center,
+          zoom: 15.0,
+        ),
+        mapType: MapType.normal,
+        markers: _markers,
+      ),
+    );
+  }
+}
