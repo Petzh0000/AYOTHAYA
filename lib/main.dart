@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:homework1/Page/first_page.dart';
 import 'package:homework1/Page/fourth_page.dart';
+import 'package:homework1/Page/login_page.dart';
 import 'package:homework1/Page/second_page.dart';
 import 'package:homework1/Page/Index.dart';
 import 'package:homework1/Page/third_page.dart';
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
         '/first': (context) => FirstPage(),
         '/second': (context) => SecondPage(),
         '/third': (context) => ThirdPage(),
-        '/fourth': (context) => FourthPage()
+        '/fourth': (context) => FourthPage(),
+        '/login' : (context) => LoginPage()
       },
       title: 'Ayothaya ',
       home: Index(),
