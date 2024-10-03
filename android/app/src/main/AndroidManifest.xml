@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
+<<<<<<< HEAD
         android:label="kanokpon11"
+=======
+        android:label="Ayothaya"
+>>>>>>> refs/remotes/origin/main
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
